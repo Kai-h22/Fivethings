@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Fivethings</string>
+
+    <string name="action1">Count to 10 on your Fingers</string>
+    <string name="action2">Act out  your favorite movie scene using your hands</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+
+    <string name="title_activity_breathe">BreatheActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="breathe">Breathe in when the circle is white</string>
+    <string name="breatheOut">Breathe out</string>
+</resources>
