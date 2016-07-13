@@ -4,11 +4,14 @@ import fivever.com.fivethings.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -17,7 +20,7 @@ import android.view.View;
  *
  * @see SystemUiHider
  */
-public class BreatheActivity extends Activity {
+public class BreatheActivity extends Activity implements View.OnClickListener {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -46,11 +49,17 @@ public class BreatheActivity extends Activity {
      */
     private SystemUiHider mSystemUiHider;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    Button b1;
+    TextView tv1;
 
+
+    @Override
+    protected void onCreate (Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breathe);
+        b1 = (Button) findViewById(R.id.button);
+        tv1 = (TextView) findViewById(R.id.textView);
+        b1.setOnClickListener(this);
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final View contentView = findViewById(R.id.fullscreen_content);
@@ -125,6 +134,14 @@ public class BreatheActivity extends Activity {
         delayedHide(100);
     }
 
+    @Override
+    public void onClick(View v)
+    {
+        // TODO Auto-generated method stub
+        Intent i = new Intent(getApplicationContext(),BreatheActivity.class);
+        startActivity(i);
+        setContentView(R.layout.activity_breathe);
+    }
 
     /**
      * Touch listener to use for in-layout UI controls to delay hiding the
